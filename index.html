@@ -2,14 +2,18 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Web có Dark Mode</title>
+  <title>Chào mừng</title>
   <style>
     body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 50px;
       background-color: white;
       color: black;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 50px;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .dark-mode {
@@ -18,23 +22,30 @@
     }
 
     button {
-      padding: 10px
-        <!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Chào mừng</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 11pvh;
-      font-size: 50px;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <p>chào mừng tụi chó</p>
+  <button id="toggleBtn" onclick="toggleDarkMode()">Bật Dark Mode</button>
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const btn = document.getElementById('toggleBtn');
+
+      body.classList.toggle('dark-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        btn.textContent = 'Tắt Dark Mode';
+      } else {
+        btn.textContent = 'Bật Dark Mode';
+      }
+    }
+  </script>
 </body>
 </html>
